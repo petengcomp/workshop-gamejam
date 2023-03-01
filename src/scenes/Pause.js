@@ -9,7 +9,6 @@ export default class Pause extends Phaser.Scene{
 
     preload() {
         /* loading images */
-        this.load.image('bg', './src/assets/img/bg.png');
         this.load.image('background', './src/assets/img/galaxy.png');
         this.load.image('home', './src/assets/img/home.png');
         this.load.image('restart', './src/assets/img/restart.png');
