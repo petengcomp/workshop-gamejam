@@ -28,7 +28,7 @@ export default class GameOver extends Phaser.Scene{
 
         /* dados padrões */
         const {width , height} = this.scale;
-        const style = { color: '#000', fontSize: 24 };
+        const style = { color: '#6E6E6E', fontSize: 24 };
 
         /* adicionando imagem de fundo e de game over */
         this.add.image(width/2, height/2, 'background');
