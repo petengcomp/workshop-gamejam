@@ -28,22 +28,22 @@ export default class GameOver extends Phaser.Scene{
 
         /* dados padrões */
         const {width , height} = this.scale;
-        const style = { color: '#6E6E6E', fontSize: 24 };
+        const style = { color: '#ffffff', fontSize: 24 };
 
         /* adicionando imagem de fundo e de game over */
         this.add.image(width/2, height/2, 'background');
-        this.add.image(width/2, 150, 'gameOver').setScale(0.3);
+        this.add.image(width/2, 150, 'gameOver').setScale(0.5);
 
         /* adicionando texto */
         this.add.text(width/2, 350,`Your score was: ${this.scoreFinal}`, style).setOrigin(0.5);
         
         /* adicionando butões e suas ações */
-        const restart = this.add.image(100,490,'restart').setScale(0.15).setInteractive();
-        const home = this.add.image(300,490,'home').setScale(0.15).setInteractive();
+        const restart = this.add.image(100,490,'restart').setScale(0.4).setInteractive();
+        const home = this.add.image(300,490,'home').setScale(0.4).setInteractive();
 
         /* ações do botão home */
         home.on('pointerover', () => {home.setScale(0.22)});
-        home.on('pointerout', () => {home.setScale(0.15)});
+        home.on('pointerout', () => {home.setScale(0.4)});
         home.on('pointerdown', () => {
             this.scene.stop('game');
             this.scene.stop('pause');
@@ -53,7 +53,7 @@ export default class GameOver extends Phaser.Scene{
 
         /* ações do botão de restart */
         restart.on('pointerover', () => {restart.setScale(0.22);})
-        restart.on('pointerout', () => {restart.setScale(0.15);})
+        restart.on('pointerout', () => {restart.setScale(0.4);})
         restart.on('pointerdown', () => {
             this.scene.stop('game');
             this.scene.stop('pause');
