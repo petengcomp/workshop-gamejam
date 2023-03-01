@@ -8,24 +8,24 @@ export default class Pause extends Phaser.Scene{
     init() {}
 
     preload() {
-        /* loading images */
+        /* carregando as imagens */
         this.load.image('background', './src/assets/img/galaxy.png');
         this.load.image('home', './src/assets/img/home.png');
         this.load.image('restart', './src/assets/img/restart.png');
         this.load.image('resume', './src/assets/img/resume.png');
 
-        /* create keyboard object */
+        /* criando o objeto do teclado */
         this.keys = this.input.keyboard.createCursorKeys();
     }
     
     create() {
-        /* standard data */
+        /* dados padrões */
         const {width, height} = this.scale;
 
-        /* adding background */
+        /* adicionando imagem de fundo */
         this.add.image(width/2, height/2, 'background');
 
-        /* creating buttons and your own actions */
+        /* criando os butões e suas ações */
         const playPauseButton = this.add.image(width/2, height/3,'resume').setScale(0.1).setInteractive();
         playPauseButton.on('pointerover', ()=> {playPauseButton.setScale(0.12)});
         playPauseButton.on('pointerout', ()=> {playPauseButton.setScale(0.1)});
@@ -56,7 +56,7 @@ export default class Pause extends Phaser.Scene{
     }
     
     update(){
-        /* creating action to shift key */
+        /* criando a ação para a tecla shift */
         const kShift = this.keys.shift.isDown;
 
         if(kShift) {
