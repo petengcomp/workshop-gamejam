@@ -25,7 +25,7 @@ export default class Menu extends Phaser.Scene {
 
     // adicionando a seta para voltar para o inicio
     const back = this.add.image(70, 70, 'go_back_arrow').setScale(0.4).setInteractive();
-    this.add.text(120, 60, 'Voltar', textStyle)
+    this.add.text(120, 60, 'Back', textStyle)
     back.on('pointerover', () => {
       back.setScale(0.5)
       this.sys.canvas.style.cursor = 'pointer';

@@ -166,7 +166,6 @@ export default class Game extends Phaser.Scene{
         }
     }
 
-
     shot(){
         this.laserShot = this.sound.add('laserShot', {loop: false, volume: 0.1});
         this.laserShot.play();
@@ -218,7 +217,7 @@ export default class Game extends Phaser.Scene{
         this.alienGroup.remove(alien);
         alien.destroy();
         this.lifes--;
-        this.lifesText.setText(`Vidas: ${this.lifes}`);
+        this.lifesText.setText(`HP: ${this.lifes}`);
         this.ship.setTint(0xff0000);
         this.time.addEvent({
             delay: 100,
@@ -247,7 +246,7 @@ export default class Game extends Phaser.Scene{
             loop: false
         });
         this.score+=10;
-        this.scoreText.setText(`Pontos: ${this.score}`);
+        this.scoreText.setText(`Points: ${this.score}`);
         this.impactSound.play();
     }
 
@@ -256,7 +255,7 @@ export default class Game extends Phaser.Scene{
         this.coinGroup.remove(coin);
         coin.destroy();
         this.score+=100;
-        this.scoreText.setText(`Pontos: ${this.score}`);
+        this.scoreText.setText(`Points: ${this.score}`);
         this.coinSound.play();
     }
 
